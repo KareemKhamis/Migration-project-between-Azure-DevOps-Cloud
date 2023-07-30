@@ -149,11 +149,43 @@ In this step, I customized the Inherited Agile process template as required :
 
 ![DoCustomField2](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/e256a355-9183-4a31-b813-12e145e3b4ea)
 
-You can check the Work Items (to make sure you have added the field) by Going to Your Inherited Process and checking every work Item layout.
+You can check the Work Items (to make sure you have customized the layout) by Going to Your Inherited Process and checking every work Item layout.
 
 
 ![AfterFieldCustom](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/58362d4d-852c-4119-be6a-fef1f7f6acaa)
 
-Note: Repeat the field customization layout process for each work item in the inherited process template in the destination project.
+Note: Repeat the field customization layout process for each work item in the inherited process template in the destination project as required..
 
 2.  **Build & Customize the States**:
+
+2.1 Open your **Azure organization setting**
+
+2.2 Open **Process Settings**
+
+![Process](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/c49931d5-a8c3-435e-83ee-0c4c70b4358e)
+2.3 Open Your **Inherited Process Settings**
+
+![InheritedProcess](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/a2b6d8d8-66e0-4008-a7a6-d2ed7ade562d)
+2.4 For Each Work Item Type, Open it and repeat the following steps
+
+![WorkItem](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/2628e2f4-9a75-41f1-a9dd-8687ad0f8913)
+
+2.5 Click on **States**
+
+2.6 Click on **New state**
+
+2.7 In the Name Dialog, Set the New State name to **Development**
+
+2.8 In the Name State category, Set the New State name to **In Progress**
+
+2.9 In the Color category, Set the desired **Color**
+
+2.10 Click **Create**
+
+![StateCustom](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/91498587-527e-427c-a0e7-8324e9db3987)
+
+You can check the Work Items (to make sure you have customized the States) by Going to Your Inherited Process and checking every work Item States.
+
+![AftterStateCustom](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/1a478950-a257-420d-a363-53ac56d7706d)
+
+Note: Repeat the State customization layout process for each work item in the inherited process template in the destination project as required.
