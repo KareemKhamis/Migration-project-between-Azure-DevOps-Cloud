@@ -236,3 +236,20 @@ AccessToken:  **XXXXXXX**
 
 ![json1](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/f6c2ecff-6d86-4ecf-b2d7-096b8beaf222)
 
+5. In **FieldMaps**, I used the "FieldMergeMapConfig" method for each work item to store the Archived data from the source project into a specific layout page into the source project
+
+$type: **FieldMergeMapConfig** (In case of migration of multiple fields, use this mapping method"
+
+WorkItemTypeName: **Work item name** at the source project
+  
+sourceFields: **Field Reference Name** from the inherited process of the source project, in this dialogue, I have listed all unused field reference names which will be stored in Data Archived layout page at the target project.
+
+
+![Field Reference Name](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/77718493-7c20-48f3-b65b-8d836903d4da)
+
+targetField: **Field Reference Name** In this dialogue, I have created a **New page** with a **New field** with the name: **Data Archived from Old project** to store the archived data from the source project. 
+I have listed the names of the unused fields which will be reflected in the Data Archived layout page of the target project.
+
+![DataArchivedfromOldproject](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/a51aa04a-1d90-471f-8718-10a98496f236)
+
+formatExpression: I have listed the names of the unused fields which will be reflected in the Data Archived layout page of the target project.
