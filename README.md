@@ -236,7 +236,7 @@ AccessToken:  **XXXXXXX**
 
 ![json1](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/f6c2ecff-6d86-4ecf-b2d7-096b8beaf222)
 
-5. In **FieldMaps**, I used the "FieldMergeMapConfig" method for each work item to store the Archived data from the source project into a specific layout page into the source project
+5. In **FieldMaps**, I used the **FieldMergeMapConfig** method for each work item to store the Archived data from the source project into a specific layout page into the source project
 
 $type: **FieldMergeMapConfig** (In case of migration of multiple fields, use this mapping method"
 
@@ -253,3 +253,21 @@ I have listed the names of the unused fields which will be reflected in the Data
 ![DataArchivedfromOldproject](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/a51aa04a-1d90-471f-8718-10a98496f236)
 
 formatExpression: I have listed the names of the unused fields which will be reflected in the Data Archived layout page of the target project.
+
+6. In **FieldMaps**, I used the **FieldValueMapConfig** method for each work item to configure & value mapping the states for each work item
+
+![Fieldmapping](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/15b5f359-fe7d-49f7-b4e7-488d405b8d6d)
+
+7. **Processors** are the control units for migration, each processor controls the migration of a specific part of Azure DevOps Project.
+**Important Note**: If you don’t have any processor enabled, the tool won’t work at all.
+
+8. Each processor has an **Enabled** flag, which is either  **true or false**, if it’s enabled (true) then this processor will be executed during migration.
+   
+9. Each processor has **WIQLQueryBit**, which includes or excludes the name of the work item type being migrated.
+
+10. For Attachments migration configuration:
+"LinkMigration": true,
+"AttachmentMigration": true,
+"AttachmentWorkingPath": "c:\\temp\\WorkItemAttachmentWorkingFolder\\" 
+
+![Processors](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/c96364b9-5d7e-4e46-add4-6f8b74873c3a)
