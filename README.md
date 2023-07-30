@@ -27,7 +27,7 @@
 
 *  [Preparing The Destination Project](#preparing-the-destination-project)
 
-*  Preparing JSON File
+*  [Preparing JSON File](#preparing-json-file)
 
 *  Migrate Work Iterations
 
@@ -184,8 +184,55 @@ Note: Repeat the field customization layout process for each work item in the in
 
 ![StateCustom](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/91498587-527e-427c-a0e7-8324e9db3987)
 
-You can check the Work Items (to make sure you have customized the States) by Going to Your Inherited Process and checking every work Item States.
+I can check the Work Items (to make sure you have customized the States) by Going to Your Inherited Process and checking every work Item States.
 
 ![AftterStateCustom](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/1a478950-a257-420d-a363-53ac56d7706d)
 
 Note: Repeat the State customization layout process for each work item in the inherited process template in the destination project as required.
+
+#  Preparing JSON File
+
+Navigate to `C:\tools\MigrationTools` then Open `configuration.json` from the current directory
+1. In **Endpoints**, I set the values for the **Source Project**:
+
+Organization: **Organization URL**
+
+Project: **Source Project Name** 
+
+AuthenticationMode: **Access type name**
+
+AccessToken:  **XXXXXXX**
+
+2. In **ChangeSetMappingFile**, I set the values for the **Target Project**
+
+Organization: **Organization URL**
+
+Project: **Target Project Name** 
+
+AuthenticationMode: **Access type name**
+
+AccessToken:  **XXXXXXX**
+
+
+3. In **ChangeSetMappingFile**, I set the values for the **Source Project**
+
+Collection: **Organization URL**
+
+Project: **Source Project Name** 
+
+AuthenticationMode: **Access type name**
+
+AccessToken:  **XXXXXXX**
+
+4. In **ChangeSetMappingFile**, I set the values for the **Target Project**
+
+Collection: **Organization URL**
+
+Project: **Target Project Name** 
+
+AuthenticationMode: **Access type name**
+
+AccessToken:  **XXXXXXX**
+
+![json1](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/f6c2ecff-6d86-4ecf-b2d7-096b8beaf222)
+
