@@ -26,7 +26,7 @@
 
 * [Migrate Test Cases](#migrate-test-cases)
 
-* Migrating Work Items
+* [Migrate Test Suits and Test Plans](#migrate-test-suits-andtestplans) 
 
 * Migrating Links between Work Items
 
@@ -287,4 +287,4 @@ Here is how the Target Project Looks like after Migration
 ![TestCasesAfterMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/2cfdfc03-968e-4d93-83a3-89affd8720e0)
 
 
-   
+ # Migrate Test Suits and Test Plans  
