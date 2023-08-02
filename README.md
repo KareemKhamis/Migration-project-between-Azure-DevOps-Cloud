@@ -5,7 +5,6 @@
 
 # Services/Tools used in the project:
 
-- Git
 - PowerShell
 
 - Azure DevOps Services
@@ -19,17 +18,13 @@
 
 * [Introduction](#introduction)
 
- 
-
 * [Getting Environment Ready](#getting-environment-ready)
 
 * [Preparing The Destination Project](#preparing-the-destination-project)
 
-*  [Preparing The Destination Project](#preparing-the-destination-project)
+* [Preparing JSON File](#preparing-json-file)
 
-*  [Preparing JSON File](#preparing-json-file)
-
-*  Migrate Work Iterations
+* [Migrate Test Cases](#migrate-test-cases)
 
 * Migrating Work Items
 
@@ -193,75 +188,103 @@ Note: Repeat the State customization layout process for each work item in the in
 #  Preparing JSON File
 
 Navigate to `C:\tools\MigrationTools` then Open `configuration.json` from the current directory
-1. In **Endpoints**, I set the values for the **Source Project**:
+1. In `Endpoints`, I set the values for the **Source Project**:
 
-Organization: **Organization URL**
+`Organization`: **Organization URL**
 
-Project: **Source Project Name** 
+`Project`: **Source Project Name** 
 
-AuthenticationMode: **Access type name**
+`AuthenticationMode`: **Access type name**
 
-AccessToken:  **XXXXXXX**
+`AccessToken`:  **XXXXXXX**
 
-2. In **ChangeSetMappingFile**, I set the values for the **Target Project**
+2. In `Endpoints`, I set the values for the **Target Project**
 
-Organization: **Organization URL**
+`Organization`: **Organization URL**
 
-Project: **Target Project Name** 
+`Project`: **Target Project Name** 
 
-AuthenticationMode: **Access type name**
+`AuthenticationMode`: **Access type name**
 
-AccessToken:  **XXXXXXX**
+`AccessToken`:  **XXXXXXX**
 
 
-3. In **ChangeSetMappingFile**, I set the values for the **Source Project**
+3. In `ChangeSetMappingFile`, I set the values for the **Source Project**
 
-Collection: **Organization URL**
+`Collection`: **Organization URL**
 
-Project: **Source Project Name** 
+`Project`: **Source Project Name** 
 
-AuthenticationMode: **Access type name**
+`AuthenticationMode`: **Access type name**
 
-AccessToken:  **XXXXXXX**
+`AccessToken`:  **XXXXXXX**
 
-4. In **ChangeSetMappingFile**, I set the values for the **Target Project**
+4. In `ChangeSetMappingFile`, I set the values for the **Target Project**
 
-Collection: **Organization URL**
+`Collection`: **Organization URL**
 
-Project: **Target Project Name** 
+`Project`: **Target Project Name** 
 
-AuthenticationMode: **Access type name**
+`AuthenticationMode`: **Access type name**
 
-AccessToken:  **XXXXXXX**
+`AccessToken`:  **XXXXXXX*
 
 ![json1](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/f6c2ecff-6d86-4ecf-b2d7-096b8beaf222)
 
-5. In **FieldMaps**, I used the **FieldMergeMapConfig** method for each work item to store the Archived data from the source project into a specific layout page into the source project
+5. In `FieldMaps`, I used the `FieldMergeMapConfig` method for each work item to store the Archived data from the source project into a specific layout page into the source project
 
-$type: **FieldMergeMapConfig** (In case of migration of multiple fields, use this mapping method)
+`"$type": "FieldMergeMapConfig"` (In case of migration of multiple fields, use this mapping method)
 
-WorkItemTypeName: **Work item name** 
+`WorkItemTypeName`: **Work item name** 
   
-sourceFields: **Field Reference Name** I got the Field Reference Name from the inherited process of the source project.
+`sourceFields`: **Field Reference Name** I got the Field Reference Name from the inherited process of the source project.
 
-targetField: **Field Reference Name** In this dialogue, I have created a **New page** with a **New field** with the name: **Data Archived from Old project** to store the archived data from the source project. 
+`targetField`: **Field Reference Name** In this dialogue, I have created a **New page** with a **New field** with the name: **Data Archived from Old project** to store the archived data from the source project. 
 
 formatExpression: I have listed the names of the unused fields which will be reflected in the Data Archived layout page of the target project.
 
-6. In **FieldMaps**, I used the **FieldValueMapConfig** method for each work item to configure & value mapping the states for each work item
+6. In `FieldMaps`, I used the `FieldValueMapConfig` method for each work item to configure & value mapping the states for each work item*
 
 ![Fieldmapping](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/15b5f359-fe7d-49f7-b4e7-488d405b8d6d)
 
-7. **Processors** are the control units for migration, each processor controls the migration of a specific part of Azure DevOps Project.
-**Important Note**: If you don’t have any processor enabled, the tool won’t work at all.
+7. `Processors` are the control units for migration, each processor controls the migration of a specific part of Azure DevOps Project.
+**Remember:** If you want a processor to run, its `Enabled` attribute must be set to `true`
 
-8. Each processor has an **Enabled** flag, which is either  **true or false**, if it’s enabled (true) then this processor will be executed during migration.
+8. Each processor has an `Enabled` attribute, which is either  `true` or `false`, if it’s enabled (`true`) then this processor will be executed during migration.
    
-9. Each processor has **WIQLQueryBit**, which includes or excludes the name of the work item type being migrated.
+9. Modify the  `WIQLQueryBit`  to migrate only the work items you want. The default WIQL will migrate all open work items and revisions excluding test suites and plans
 
 10. For Attachments migration configuration:
-"LinkMigration": true,
-"AttachmentMigration": true,
-"AttachmentWorkingPath": "c:\\temp\\WorkItemAttachmentWorkingFolder\\" 
+`"LinkMigration"`: `true`,
+`"AttachmentMigration"`: `true`,
+"AttachmentWorkingPath":`"c:\\temp\\WorkItemAttachmentWorkingFolder\\"` 
 
 ![Processors](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/c96364b9-5d7e-4e46-add4-6f8b74873c3a)
+
+
+# Migrate Test Cases
+
+I started the migration with **Test Cases** along with their attachments to the Target Project, This is its configuration at the Processors in the JSON file: `"WIQLQueryBit": "AND [System.WorkItemType] = 'Test Case'` "
+
+![TestCaseBeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/dc61090e-96ea-4b41-9f2b-57786165a74f)
+
+2. Now To Migrate ##Test Cases##, Let’s get back to the JSON File:
+* Enable the  `WorkItemMigrationConfig`  processor by setting  `Enabled`  to  `true`
+* Set `"WIQLQueryBit"`: `"AND [System.WorkItemType]` = `'Test Case'` "`
+  
+![TestcaeJson](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/549ed61b-9069-4d86-91b3-b7af28be3e70)
+
+3. From the `C:\tools\MigrationTools\` path, run `.\migration.exe execute --config .\configuration.json`
+
+![TestCasePowrershell](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/0651d6f6-6787-4b5c-812e-939f10168454)
+
+4. Once finished you’ll see something like this:
+
+![TestCasesJSONdone (2)](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/64f74b4b-c72e-4995-b26b-1e72e40a54a7)
+
+Here is how the Target Project Looks like after Migration
+
+![TestCasesAfterMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/2cfdfc03-968e-4d93-83a3-89affd8720e0)
+
+
+   
