@@ -268,7 +268,7 @@ I started the migration with **Test Cases** along with their attachments to the 
 
 ![TestCaseBeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/dc61090e-96ea-4b41-9f2b-57786165a74f)
 
-2. Now To Migrate ##Test Cases##, Let’s get back to the JSON File:
+2. Now To Migrate **Test Cases**, Let’s get back to the JSON File:
 * Enable the  `WorkItemMigrationConfig`  processor by setting  `Enabled`  to  `true`
 * Set `"WIQLQueryBit"`: `"AND [System.WorkItemType]` = `'Test Case'` "`
   
