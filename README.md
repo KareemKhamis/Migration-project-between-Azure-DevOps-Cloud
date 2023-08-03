@@ -227,7 +227,7 @@ Navigate to `C:\tools\MigrationTools` then Open `configuration.json` from the cu
 
 `AuthenticationMode`: **Access type name**
 
-`AccessToken`:  **XXXXXXX*
+`AccessToken`:  **XXXXXXX**
 
 ![json1](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/f6c2ecff-6d86-4ecf-b2d7-096b8beaf222)
 
