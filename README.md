@@ -28,7 +28,7 @@
 
 * [Migrate Test Suits and Test Plans](#migrate-test-suits-andtestplans) 
 
-* Migrating Links between Work Items
+* [Migrating Work Items](#migrating-work-items)
 
 * Migrating Attachments
 
@@ -288,3 +288,28 @@ Here is how the Target Project Looks like after Migration
 
 
  # Migrate Test Suits and Test Plans  
+ 
+Now Let’s move to the Migrating of Test Suits and Test Plans, Here are the Test plans before migration:
+
+![TestPlansbeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/02fc50b4-57a4-481d-9f90-622e2206628f)
+
+2. Now To MigrateTest Suits and Test Plans, Let’s get back to the JSON File:
+* Enable the processor `"$type": "TestVariablesMigrationConfig"` by setting `Enabled` to `true`
+* Enable the processor ` "$type": "TestConfigurationsMigrationConfig"` by setting `Enabled` to `true`
+* Enable the  `"$type": "TestPlansAndSuitesMigrationConfig",`  processor by setting  `Enabled`  to  `true`
+
+ ![TestPlansjsonconfig](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/19c686db-9a52-4fe0-9758-17783e215adb)
+
+3. From the  `C:\tools\MigrationTools\`  path, run  `.\migration.exe execute --config .\configuration.json`
+
+![TestPlansjsonstart](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/3f6c390f-8895-462d-8e03-72f3933f9567)
+
+4. Once finished you’ll see something like this:
+
+![TestPlanjsondone](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/5030ad15-b23c-4057-aa3e-d2613d2cf0c6)
+
+Here is how the Target Project Looks like after Migration
+
+![TestPlanafterMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/6c20248e-0c3f-408e-a25c-ec50db98020a)
+
+# Migrating Work Items
