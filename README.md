@@ -294,9 +294,13 @@ Now Let’s move to the Migrating of Test Suits and Test Plans, Here are the Tes
 ![TestPlansbeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/02fc50b4-57a4-481d-9f90-622e2206628f)
 
 2. Now To MigrateTest Suits and Test Plans, Let’s get back to the JSON File:
+* Set the processor `"$type": "WorkItemMigrationConfig"` , `Enabled`  to  `false` 
 * Enable the processor `"$type": "TestVariablesMigrationConfig"` by setting `Enabled` to `true`
 * Enable the processor ` "$type": "TestConfigurationsMigrationConfig"` by setting `Enabled` to `true`
 * Enable the  `"$type": "TestPlansAndSuitesMigrationConfig",`  processor by setting  `Enabled`  to  `true`
+
+  
+![TestPlanjsonconfig2](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/411553d0-b5c1-4f05-aea5-a5191e5e0a56)
 
  ![TestPlansjsonconfig](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/19c686db-9a52-4fe0-9758-17783e215adb)
 
