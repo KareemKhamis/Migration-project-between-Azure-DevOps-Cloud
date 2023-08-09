@@ -28,9 +28,9 @@
 
 * [Migrate Test Suits and Test Plans](#migrate-test-suits-andtestplans) 
 
-* [Migrating Work Items](#migrating-work-items)
-
 * [Migrating Shared Queries](#migrating-shared-queries)
+
+* [Migrating Work Items](#migrating-work-items)
 
 * Conclusion
 
@@ -345,3 +345,5 @@ Here is how the Target Project Looks like after Migration
 Here is how the Target Project Looks like after Migration
 
 ![QueriesafterMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/5edfb3e4-b3c1-4b54-b6f8-23678a7eb254)
+
+# Migrating Work Items
