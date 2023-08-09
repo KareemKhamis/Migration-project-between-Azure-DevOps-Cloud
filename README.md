@@ -335,7 +335,7 @@ Here is how the Target Project Looks like after Migration
 
 3. From the  `C:\tools\MigrationTools\`  path, run  `.\migration.exe execute --config .\configuration.json`
 
-![QueriesPowerShellStart](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/714fb517-078b-4903-97bf-b7a3cca02cb8)
+![QueriesPowerShellStart](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/c9f4317f-2db4-4360-9df7-4a68c26659cc)
 
 
 4. Once finished you’ll see something like this:
