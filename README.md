@@ -30,7 +30,7 @@
 
 * [Migrating Work Items](#migrating-work-items)
 
-* Migrating Attachments
+* [Migrating Shared Queries](#migrating-shared-queries)
 
 * Conclusion
 
@@ -264,7 +264,7 @@ formatExpression: I have listed the names of the unused fields which will be ref
 
 # Migrate Test Cases
 
-I started the migration with **Test Cases** along with their attachments to the Target Project, This is its configuration at the Processors in the JSON file: `"WIQLQueryBit": "AND [System.WorkItemType] = 'Test Case'` "
+1. I started the migration with **Test Cases** along with their attachments to the Target Project, This is its configuration at the Processors in the JSON file: `"WIQLQueryBit": "AND [System.WorkItemType] = 'Test Case'` "
 
 ![TestCaseBeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/dc61090e-96ea-4b41-9f2b-57786165a74f)
 
@@ -289,15 +289,15 @@ Here is how the Target Project Looks like after Migration
 
  # Migrate Test Suits and Test Plans  
  
-Now Let’s move to the Migrating of Test Suits and Test Plans, Here are the Test plans before migration:
+1. Now Let’s move to the Migrating of Test Suits and Test Plans, Here are the Test plans before migration:
 
 ![TestPlansbeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/02fc50b4-57a4-481d-9f90-622e2206628f)
 
-2. Now To MigrateTest Suits and Test Plans, Let’s get back to the JSON File:
-* Set the processor `"$type": "WorkItemMigrationConfig"` , `Enabled`  to  `false` 
+2. Now To Migrate Test Suits and Test Plans, Let’s get back to the JSON File:
+* Set the processor `"$type": "WorkItemMigrationConfig"`, `Enabled`  to  `false` 
 * Enable the processor `"$type": "TestVariablesMigrationConfig"` by setting `Enabled` to `true`
 * Enable the processor ` "$type": "TestConfigurationsMigrationConfig"` by setting `Enabled` to `true`
-* Enable the  `"$type": "TestPlansAndSuitesMigrationConfig",`  processor by setting  `Enabled`  to  `true`
+* Enable the processor  `"$type": "TestPlansAndSuitesMigrationConfig",` by setting  `Enabled`  to  `true`
 
   
 ![TestPlanjsonconfig2](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/411553d0-b5c1-4f05-aea5-a5191e5e0a56)
@@ -316,4 +316,31 @@ Here is how the Target Project Looks like after Migration
 
 ![TestPlanafterMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/6c20248e-0c3f-408e-a25c-ec50db98020a)
 
-# Migrating Work Items
+# Migrating Shared Queries
+
+1. Now Let’s move to the Migrating of Shared Queries, Here are the Shared Queries before migration:
+
+![TestPlansbeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/3a95a7b4-1aa9-4713-9242-b7a470615a1f)
+
+2. Now To Migrate Shared Queries, Let’s get back to the JSON File:
+* Set the processor `"$type": "WorkItemMigrationConfig"`, `Enabled`  to  `false` 
+* Set the processor `"$type": "TestVariablesMigrationConfig"`, `Enabled`  to  `false` 
+* Set the processor  `"$type": "TestPlansAndSuitesMigrationConfig",`  `Enabled`  to  `false` 
+* Enable the processor `"$type": "TfsSharedQueryProcessorOptions",` by setting  `Enabled`  to  `true`
+
+![TestPlanjsonconfig2](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/c4c77440-5eae-456c-9955-f64aa80647e0)
+
+
+![QueriesJSON](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/f9d5541e-ad36-44ae-8d0d-60a995e884b4)
+
+3. From the  `C:\tools\MigrationTools\`  path, run  `.\migration.exe execute --config .\configuration.json`
+
+![QueriesPowerShellStart](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/5be0d2ff-0340-4fd3-8063-29b96c122121)
+
+4. Once finished you’ll see something like this:
+
+![QueriesPowerShellEnd](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/146da31e-58df-4b97-8230-103839a3b708)
+
+Here is how the Target Project Looks like after Migration
+
+![QueriesafterMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/5edfb3e4-b3c1-4b54-b6f8-23678a7eb254)
