@@ -347,3 +347,19 @@ Here is how the Target Project Looks like after Migration
 ![QueriesafterMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/5edfb3e4-b3c1-4b54-b6f8-23678a7eb254)
 
 # Migrating Work Items
+
+1 Now To Migrate Work Items, Let’s get back to the JSON File:
+
+* Enable the processor "$type": "WorkItemMigrationConfig", by setting Enabled to true
+* Set the processor "$type": "TestVariablesMigrationConfig", Enabled to false
+* Set the processor "$type": "TestPlansAndSuitesMigrationConfig", Enabled to false
+* Set the processor  "$type": "TfsSharedQueryProcessorOptions", Enabled to false
+
+![WorkItemsjson1](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/ed1dd096-549e-4c3f-9331-9bd15829e4ce)
+
+![Workitemsjson2](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/921cfa35-bdaf-4136-9e86-71fb47ed3aa6)
+
+2 From the `C:\tools\MigrationTools\ path`, run `.\migration.exe execute --config .\configuration.json`
+
+![Workitempowershell](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/1f07133c-d2ef-4824-a98c-a3fec1dad1be)
+
