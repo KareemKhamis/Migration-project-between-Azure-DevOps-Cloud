@@ -32,7 +32,7 @@
 
 * [Migrating Work Items](#migrating-work-items)
 
-* Conclusion
+* [Dry run](#dry-run)
 
   
 
@@ -363,3 +363,21 @@ Here is how the Target Project Looks like after Migration
 
 ![Workitempowershell](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/1f07133c-d2ef-4824-a98c-a3fec1dad1be)
 
+3 Once finished you’ll see something like this:
+
+![WorkItemspowershell](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/5514ef5e-5748-46ef-b3fa-0533b85d08a1)
+
+4  And Finally, here is the Work Items with Attachments migrated along with Links between Work Items
+
+![Allworkitems](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/682117d1-f7c1-476e-920e-766253075e72)
+
+# Dry run
+
+*Prior to the actual migration, a pre-dry run will be performed. This involves testing a sample configuration to ensure that field mappings for custom fields align with the process template. If any conflicts or differences are identified, they will be correct to match the source field references in the main configuration file.
+
+![Picture1](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/100a9fb3-cccd-43d8-a8a6-007e196cf787)
+
+Full Dry run:
+* Along with all that mentioned steps a full dry run will be conducted to ensure that all configurations are functioning correctly
+* The first dry run can be performed without any downtime for the source project, allowing for an estimation of the actual migration process.
+* Once the dry run is completed successfully, the actual migration can commence. It is advisable to schedule the migration on weekends to minimize downtime during the process.
