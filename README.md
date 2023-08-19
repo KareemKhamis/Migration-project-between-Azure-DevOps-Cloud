@@ -380,4 +380,4 @@ Here is how the Target Project Looks like after Migration
 Full Dry run:
 * Along with all that mentioned steps a full dry run will be conducted to ensure that all configurations are functioning correctly
 * The first dry run can be performed without any downtime for the source project, allowing for an estimation of the actual migration process.
-* Once the dry run is completed successfully, the actual migration can commence. It is advisable to schedule the migration on weekends to minimize downtime during the process.
+* Once the dry run is completed successfully, the actual migration can commence. It is advisable to schedule the migration on weekends to minimize downtime during the process..
