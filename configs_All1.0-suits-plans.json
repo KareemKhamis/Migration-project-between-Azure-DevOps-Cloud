@@ -1,0 +1,473 @@
+{
+  "Version": "13.0",
+  "workaroundForQuerySOAPBugEnabled": false,
+  "WorkItemTypeDefinition": {},
+  "Endpoints": {
+    "TfsEndpoints": [
+      {
+        "Name": "Source",
+        "Organisation": "https://dev.azure.com/migrationkareem/",
+        "project": "SourceMigration",
+        "AuthenticationMode": "AccessToken",
+        "AccessToken": "koubnjxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmfnna"
+      },
+      {
+        "Name": "Target",
+        "Organisation": "https://dev.azure.com/migrationkareem/",
+        "project": "TargetMigration",
+        "AuthenticationMode": "AccessToken",
+        "AccessToken": "koubnjxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmfnna"
+      }
+    ]
+  },
+  "ChangeSetMappingFile": null,
+  "Source": {
+    "$type": "TfsTeamProjectConfig",
+    "Collection": "https://dev.azure.com/migrationkareem/",
+    "Project": "SourceMigration",
+    "ReflectedWorkItemIDFieldName": "Custom.ReflectedWorkItemId",
+    "AllowCrossProjectLinking": false,
+    "AuthenticationMode": "AccessToken",
+    "PersonalAccessToken": "koubnjxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmfnna",
+    "PersonalAccessTokenVariableName": "",
+    "LanguageMaps": {
+      "AreaPath": "Area",
+      "IterationPath": "Iteration"
+    }
+  },
+  "Target": {
+    "$type": "TfsTeamProjectConfig",
+    "Collection": "https://dev.azure.com/migrationkareem/",
+    "Project": "TargetMigration",
+    "ReflectedWorkItemIDFieldName": "Custom.ReflectedWorkItemId",
+    "AllowCrossProjectLinking": false,
+    "AuthenticationMode": "AccessToken",
+    "PersonalAccessToken": "koubnjxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmfnna",
+    "PersonalAccessTokenVariableName": "",
+    "LanguageMaps": {
+      "AreaPath": "Area",
+      "IterationPath": "Iteration"
+    }
+  },
+  "FieldMaps": [
+    {
+      "$type": "FieldSkipMapConfig",
+      "WorkItemTypeName": "*",
+      "targetField": "TfsMigrationTool.ReflectedWorkItemId"
+    },
+    {
+      "$type": "FieldMergeMapConfig",
+      "WorkItemTypeName": "Feature",
+      "sourceFields": [
+        "Custom.BusinessBenefit",
+        "Custom.Solution",
+        "Custom.Function",
+        "Custom.SubFunction",
+        "Custom.Raisedby",
+        "Custom.BusinessOwner",
+        "Custom.DateRaised",
+        "Custom.ExternalID",
+        "Custom.Status",
+        "Custom.OldId",
+        "Custom.ReleaseTarget",
+        "Custom.ObjectiveCurrentState",
+        "Custom.ObjectiveTargetState",
+        "Custom.Stretch",
+        "Custom.NewRequirement",
+        "Custom.MoSCoW",
+        "Custom.ChangeStatus",
+        "Custom.ChangeComments",
+        "Custom.RequesterName",
+        "Custom.RequestDept",
+        "Custom.RequestSubDept",
+        "Custom.Project",
+        "Custom.ITOwner",
+        "Custom.ITDepartment",
+        "Custom.ITSubDepartment",
+        "Custom.RequestDeptDD",
+        "Custom.RequestSupDeptDD",
+        "Custom.SubProjectDD",
+        "Custom.ChangeRequest",
+        "Custom.SubProject"
+      ],
+      "targetField": "Custom.DataArchivedfromOldproject",
+      "formatExpression": "Business Benefit: {0} <br/> Solution: {1} <br/> Function: {2} <br/> Sub Function: {3} <br/> Raised by: {4} <br/> Business Owner: {5} <br/> Date Raised: {6} <br/> External ID: {7} <br/> Status: {8} <br/> Old Id: {9} <br/> Release Target: {10} <br/> Objective Current State: {11} <br/> Objective Target State: {12} <br/> Stretch: {13} <br/> New Requirement: {14} <br/>  MoSCoW: {15} <br/> Change Status: {16} <br/> Change Comments: {17} <br/> Requester Name: {18} <br/> Request Dept: {19} <br/> Request Sub Dept: {20} <br/> Project: {21} <br/> IT Owner: {22} <br/> IT Department: {23} <br/> IT Sub Department: {24} <br/> Request Dept DD: {25} <br/> Request Sup Dept DD: {26} <br/> Sub Project DD: {27} <br/> Change Request: {28} <br/> Sub Project: {29}"
+    },
+    {
+      "$type": "FieldValueMapConfig",
+      "WorkItemTypeName": "Feature",
+      "sourceField": "System.State",
+      "targetField": "System.State",
+      "valueMapping": {
+        "Removed": "Closed"
+      }
+    },
+    {
+      "$type": "FieldMergeMapConfig",
+      "WorkItemTypeName": "Epic",
+      "sourceFields": [
+        "Microsoft.VSTS.Common.AcceptanceCriteria",
+        "Custom.Function",
+        "Custom.SubFunction",
+        "Custom.ExternalID",
+        "Custom.Currentstate",
+        "Custom.TargetstateDifficulty",
+        "Custom.ITStrategyAlignment",
+        "Custom.BusinessObjectiveAlignment",
+        "Custom.NewRequirement",
+        "Custom.RequesterName",
+        "Custom.RequestedSubDept",
+        "Custom.Project",
+        "Custom.SubProject",
+        "Custom.ITOwner",
+        "Custom.RequestDeptDD",
+        "Custom.SubProjectDD",
+        "Custom.RequestedbyDept",
+        "Custom.RequestedbySubDept",
+        "Custom.SubProjectName",
+        "Microsoft.VSTS.Scheduling.StoryPoints",
+        "Custom.RequestsubdeptDD"
+      ],
+      "targetField": "Custom.DataArchivedfromOldproject",
+      "formatExpression": "Acceptance Criteria: {0} <br/> Function: {1} <br/> Sub Function: {2}<br/> External ID: {3}<br/> Current state: {4}<br/> Target state Difficulty: {5}<br/> IT Strategy Alignment: {6}<br/> Business Objective Alignment: {7}<br/> New Requirement: {8}<br/> Requester Name: {9}<br/> Requested Sub Dept: {10}<br/> Project: {11}<br/> Sub Project: {12}<br/> IT Owner: {13}<br/> Request Dept DD: {14}<br/> Sub Project DD: {15}<br/> Requested by Dept: {16}<br/> Requested by Sub Dept: {17}<br/> Sub Project Name: {18} <br/> StoryPoints: {19} <br/> Request Sub Dept DD: {20}"
+    },
+    {
+      "$type": "FieldValueMapConfig",
+      "WorkItemTypeName": "Epic",
+      "sourceField": "System.State",
+      "targetField": "System.State",
+      "defaultValue": "New",
+      "valueMapping": {
+        "New": "New",
+        "Active": "Active",
+        "Resolved": "Resolved",
+        "Closed": "Closed",
+        "Removed": "Closed"
+      }
+    },
+    {
+      "$type": "FieldMergeMapConfig",
+      "WorkItemTypeName": "User Story",
+      "sourceFields": [
+        "Custom.Function",
+        "Custom.SubFunction",
+        "Custom.BusinessOwner",
+        "Custom.Isthisadatafix",
+        "Custom.ExternalID",
+        "Custom.Isthisahotfix",
+        "Custom.Status",
+        "Custom.ReasonforStatus",
+        "Custom.ReleaseTarget",
+        "Microsoft.VSTS.Scheduling.StartDate",
+        "Microsoft.VSTS.Common.ClosedDate",
+        "Microsoft.VSTS.Scheduling.FinishDate",
+        "Custom.Devindays",
+        "Custom.Testindays",
+        "Custom.TargetCompletionDate",
+        "Custom.ITCommentarydate",
+        "Custom.RAGStatus",
+        "Custom.BoardColumn",
+        "Custom.NewRequirement",
+        "Custom.SourceofChange",
+        "Custom.DEVStatus",
+        "Custom.QAStatus",
+        "Custom.RequestedbyDept",
+        "Custom.RequestedbySubDept",
+        "Custom.Project",
+        "Custom.SubProjectName",
+        "Custom.ITOwner",
+        "Custom.ITDepartment",
+        "Custom.ITSubDepartment"
+      ],
+      "targetField": "Custom.DataArchivedfromOldproject",
+      "formatExpression": "Function: {0} <br/> Sub Function: {1} <br/> Business Owner: {2} <br/> Is this a data fix: {3} <br/> External ID: {4} <br/> Is this a hotfix: {5} <br/> Status: {6} <br/> Reason for Status: {7} <br/> Release Target: {8} <br/> Start Date: {9} <br/> Closed Date: {10} <br/> Finish Date: {11} <br/> Dev in days: {12} <br/> Test in days: {13} <br/> Target Completion Date: {14} <br/> IT Commentary date: {15} <br/> RAG Status: {16} <br/> Board Column: {17} <br/> New Requirement: {18} <br/> Source of Change: {19} <br/> DEV Status: {20} <br/> QA Status: {21} <br/> Requested by Dept: {22} <br/> Requested by Sub Dept: {23} <br/> Project: {24} <br/> Sub Project Name: {25} <br/> IT Owner: {26} <br/> IT Department: {27} <br/> IT Sub Department: {28} <br/> "
+    },
+    {
+      "$type": "FieldValueMapConfig",
+      "WorkItemTypeName": "User Story",
+      "sourceField": "System.State",
+      "targetField": "System.State",
+      "valueMapping": {
+        "New": "New",
+        "Analysis": "Analysis",
+        "On Hold": "Analysis",
+        "Committed": "Analysis",
+        "Analysis Completed": "Analysis",
+        "Build": "Development",
+        "Build Complete": "Development",
+        "Code Review": "Development",
+        "Code Review Complete": "Development",
+        "Deploying to Test environment": "SIT",
+        "Deployment to Test Complete": "SIT",
+        "Test": "SIT",
+        "Test Complete": "SIT",
+        "Deploying to UAT environment": "UAT",
+        "Deployment to UAT Complete": "UAT",
+        "UAT": "UAT",
+        "UAT Complete": "UAT",
+        "Deploying to Live environment": "Ready",
+        "Deployment to Live Complete": "Ready",
+        "Resolved": "Closed",
+        "Removed": "Closed",
+        "Closed": "Closed"
+      }
+    },
+    {
+      "$type": "FieldMergeMapConfig",
+      "WorkItemTypeName": "Task",
+      "sourceFields": [
+        "Custom.ReleaseTarget",
+        "Custom.OldId",
+        "Custom.#ofSteps",
+        "Custom.PercentageCompleted",
+        "Custom.ActualTestCompletionDate",
+        "Custom.FoundInBuild",
+        "Custom.BusinessActionOwner",
+        "Custom.RequesterName",
+        "Custom.RequestedbyDept",
+        "Custom.RequestedbySubDept",
+        "Custom.Project",
+        "Custom.SubProjectName",
+        "Custom.ITDepartment",
+        "Custom.ITSubDepartment",
+        "Microsoft.VSTS.Scheduling.TargetDate",
+        "Microsoft.VSTS.Scheduling.StoryPoints",
+        "Microsoft.VSTS.Common.Severity"
+      ],
+      "targetField": "Custom.DataArchivedfromOldproject",
+      "formatExpression": "ReleaseTarget: {0} <br/> OldId: {1} <br/> #ofSteps: {2} <br/> PercentageCompleted: {3} <br/> ActualTestCompletionDate: {4} <br/> FoundInBuild: {5} <br/> BusinessActionOwner: {6}<br/> RequesterName: {7}<br/> RequestedbyDept: {8}<br/> RequestedbySubDept: {9}<br/> Project SubProjectName: {10}<br/> ITDepartment: {11}<br/> ITSubDepartment: {12} <br/> TargetDate: {13} <br/> StoryPoints: {14} <br/> Severity: {15}"
+    },
+    {
+      "$type": "FieldValueMapConfig",
+      "WorkItemTypeName": "Task",
+      "sourceField": "System.State",
+      "targetField": "System.State",
+      "valueMapping": {
+        "New": "New",
+        "Committed": "New",
+        "Design": "Active",
+        "Active": "Active",
+        "Build": "Active",
+        "Build Complete": "Active",
+        "Code Review": "Active",
+        "Code Review Complete": "Active",
+        "Deploying to Test environment": "Active",
+        "Deployment to Test Complete": "Active",
+        "Test": "Active",
+        "Test Complete": "Active",
+        "Deploying to UAT environment": "Active",
+        "Deployment to UAT Complete": "Active",
+        "UAT": "Active",
+        "UAT Complete": "Active",
+        "Deploying to Live environment": "Active",
+        "Deployment to Live Complete": "Active",
+        "Resolved": "Resolved",
+        "Closed": "Closed",
+        "Removed": "Closed",
+        "Blocked": "Closed",
+        "On Hold": "Closed"
+      }
+    },
+    {
+      "$type": "FieldMergeMapConfig",
+      "WorkItemTypeName": "Bug",
+      "sourceFields": [
+        "Microsoft.VSTS.Common.AcceptanceCriteria",
+        "Custom.ResponsibleBuildTeam",
+        "Custom.Function",
+        "Custom.SubFunction",
+        "Custom.Isthisadatafix",
+        "Custom.ExternalID",
+        "Custom.isthisahotfix",
+        "Custom.reasonforstatus",
+        "Custom.TargetCompletionDate",
+        "Custom.TargetSITDeploymentDate",
+        "Custom.TargetAcceptanceDeploymentDate",
+        "Custom.TargetProductionDeploymentDate",
+        "Custom.DailyProgressUpdate",
+        "Custom.isThisaStandardChange",
+        "Custom.InternalReview",
+        "Custom.Analysisindays",
+        "Custom.Devindays",
+        "Custom.Testindays",
+        "Custom.BusinessSeverity",
+        "Custom.BusinessPriority",
+        "Custom.Foundduring",
+        "Custom.introducedduring",
+        "Custom.Cause",
+        "Custom.ITCommentarydate",
+        "Custom.ITCommentaryUpdate",
+        "Custom.RAGStatus",
+        "Custom.RootCauseDetails",
+        "Custom.MoSCoW",
+        "Custom.ChangeAuthorityStatus",
+        "Custom.ChangeComments",
+        "Custom.RequesterName",
+        "Custom.RequestedbyDept",
+        "Custom.RequestedbySubDept",
+        "Custom.Project",
+        "Custom.SubProjectName",
+        "Custom.ITOwner",
+        "Custom.ITDepartment",
+        "Custom.ITSubDepartment",
+        "Custom.ActualCompletionDate"
+      ],
+      "targetField": "Custom.DataArchivedfromOldproject",
+      "formatExpression": "AcceptanceCriteria: {0} <br/> ResponsibleBuildTeam :{1} <br/> Function: {2} <br/> SubFunction :{3} <br/>Isthisadatafix: {4} <br/> ExternalID: {5} <br/> isthisahotfix: {6} <br/> reasonforstatus: {7} <br/>TargetCompletionDate: {8} <br/> TargetSITDeploymentDate: {9} <br/>TargetAcceptanceDeploymentDate: {10} <br/>TargetProductionDeploymentDate: {11} <br/>DailyProgressUpdate: {12} <br/>isThisaStandardChange: {13} <br/>InternalReview: {14} <br/>Analysisindays: {15} <br/>Devindays: {16} <br/>Testindays: {17} <br/>BusinessSeverity: {18} <br/>BusinessPriority: {19} <br/>Foundduring: {20} <br/>introducedduring: {21} <br/>Cause: {22} <br/>ITCommentarydate: {23} <br/>ITCommentaryUpdate: {24} <br/>RAGStatus: {25} <br/>RootCauseDetails: {26} <br/>MoSCoW: {27} <br/>ChangeAuthorityStatus: {28} <br/>ChangeComments: {29} <br/>RequesterName: {30} <br/>RequestedbyDept: {31} <br/>RequestedbySubDept: {32} <br/>Project: {33} <br/>SubProjectName: {34} <br/>ITOwner: {35} <br/>ITDepartment: {36} <br/>ITSubDepartment: {37} <br/> Actual Completion Date: {38}"
+    },
+    {
+      "$type": "FieldValueMapConfig",
+      "WorkItemTypeName": "Bug",
+      "sourceField": "System.State",
+      "targetField": "System.State",
+      "valueMapping": {
+        "New": "New",
+        "On Hold": "Analysis",
+        "Committed": "Analysis",
+        "Analysis": "Analysis",
+        "Analysis Completed": "Ready",
+        "Build": "Development",
+        "Build Complete": "Development",
+        "Code Review": "Development",
+        "Code Review Complete": "Development",
+        "Deploying to Test environment": "SIT",
+        "Deployment to Test Complete": "SIT",
+        "Test": "SIT",
+        "Test Complete": "SIT",
+        "Deploying to UAT environment": "UAT",
+        "Deployment to UAT Complete": "UAT",
+        "UAT": "UAT",
+        "UAT Complete": "UAT",
+        "Deploying to Live environment": "UAT",
+        "Deployment to Live Complete": "UAT",
+        "Fixed": "Closed",
+        "Resolved": "Closed",
+        "Closed": "Closed"
+      }
+    },
+    {
+      "$type": "FieldMergeMapConfig",
+      "WorkItemTypeName": "Test Case",
+      "sourceFields": [
+        "Custom.Prerequisites",
+        "Custom.TestStatus",
+        "Custom.AssociatedAreas"
+      ],
+      "targetField": "Custom.DataArchivedfromOldproject",
+      "formatExpression": "Prerequisites: {0} <br/> TestStatus :{1} <br/> AssociatedAreas: {2} "
+    },
+    {
+      "$type": "FieldValueMapConfig",
+      "WorkItemTypeName": "Test Case",
+      "sourceField": "System.State",
+      "targetField": "System.State",
+      "defaultValue": "Design",
+      "valueMapping": {
+        "Design": "Design",
+        "Ready": "Ready",
+        "On Hold": "Ready",
+        "Closed": "Closed"
+      }
+    },
+    {
+      "$type": "FieldValueMapConfig",
+      "WorkItemTypeName": "Test Plan",
+      "sourceField": "System.State",
+      "targetField": "System.State",
+      "defaultValue": "New",
+      "valueMapping": {
+        "Active": "Active",
+        "Inactive": "Inactive"
+      }
+    },
+    {
+      "$type": "FieldtoTagMapConfig",
+      "WorkItemTypeName": "*",
+      "sourceField": "System.State",
+      "formatExpression": "ScrumState:{0}"
+    },
+    {
+      "$type": "FieldValuetoTagMapConfig",
+      "WorkItemTypeName": "*",
+      "sourceField": "Microsoft.VSTS.CMMI.Blocked",
+      "pattern": "Yes",
+      "formatExpression": "{0}"
+    },
+    {
+      "$type": "TreeToTagMapConfig",
+      "WorkItemTypeName": "*",
+      "toSkip": 3,
+      "timeTravel": 1
+    }
+  ],
+  "GitRepoMapping": null,
+  "LogLevel": "Information",
+  "CommonEnrichersConfig": null,
+  "Processors": [
+    {
+      "$type": "WorkItemMigrationConfig",
+      "Enabled": false,
+      "ReplayRevisions": true,
+      "PrefixProjectToNodes": false,
+      "UpdateCreatedDate": true,
+      "UpdateCreatedBy": true,
+      "WIQLQueryBit": "AND [System.WorkItemType] = 'Test Case' ",
+      "WIQLOrderBit": "[System.ChangedDate] desc",
+      "LinkMigration": true,
+      "AttachmentMigration": true,
+      "AttachmentWorkingPath": "c:\\temp\\WorkItemAttachmentWorkingFolder\\",
+      "FixHtmlAttachmentLinks": false,
+      "SkipToFinalRevisedWorkItemType": true,
+      "WorkItemCreateRetryLimit": 5,
+      "FilterWorkItemsThatAlreadyExistInTarget": true,
+      "PauseAfterEachWorkItem": false,
+      "AttachmentMaxSize": 480000000,
+      "AttachRevisionHistory": false,
+      "LinkMigrationSaveEachAsAdded": false,
+      "GenerateMigrationComment": true,
+      "WorkItemIDs": null,
+      "MaxRevisions": 0,
+      "UseCommonNodeStructureEnricherConfig": false,
+      "StopMigrationOnMissingAreaIterationNodes": false,
+      "NodeBasePaths": [],
+      "AreaMaps": {},
+      "IterationMaps": {},
+      "MaxGracefulFailures": 0,
+      "SkipRevisionWithInvalidIterationPath": false,
+      "SkipRevisionWithInvalidAreaPath": false
+    },
+    {
+      "$type": "TestVariablesMigrationConfig",
+      "Enabled": true
+    },
+    {
+      "$type": "TestConfigurationsMigrationConfig",
+      "Enabled": true
+    },
+    {
+      "$type": "TestPlansAndSuitesMigrationConfig",
+      "Enabled": true,
+      "PrefixProjectToNodes": false,
+      "OnlyElementsWithTag": null,
+      "TestPlanQueryBit": null,
+      "RemoveAllLinks": false,
+      "MigrationDelay": 0,
+      "UseCommonNodeStructureEnricherConfig": false,
+      "NodeBasePaths": [],
+      "AreaMaps": null,
+      "IterationMaps": null,
+      "RemoveInvalidTestSuiteLinks": false,
+      "FilterCompleted": false
+    },
+    {
+      "$type": "TfsSharedQueryProcessorOptions",
+      "Enabled": false,
+      "PrefixProjectToNodes": true,
+      "SharedFolderName": "Shared Queries",
+      "SourceToTargetFieldMappings": null,
+      "ProcessorEnrichers": null,
+      "SourceName": "Source",
+      "TargetName": "Target"
+    }
+  ]
+}
