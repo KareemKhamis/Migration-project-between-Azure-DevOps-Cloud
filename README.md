@@ -1,6 +1,6 @@
 # Migration-project-between-Azure-DevOps-Cloud
 
-
+This repository demonstrates a successful project migration from one Azure DevOps organization to another. The migration process involved the transfer of Work Items, Test Plans & Suits, Teams, and Shared Queries. The migration strategy was carefully planned to ensure the integrity of the data and the preservation of dependencies. Test Cases were migrated first, followed by Test Plans. Test Suites were then manually created in the destination organization. This approach ensured the successful migration of all project components while maintaining the necessary relationships and configurations.
   
 
 # Services/Tools used in the project:
