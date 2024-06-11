@@ -26,7 +26,7 @@ This repository demonstrates a successful project migration from one Azure DevOp
 
 * [Migrate Test Cases](#migrate-test-cases)
 
-* [Migrate Test Suits and Test Plans](#migrate-test-suits-andtestplans) 
+* [Migrate Test Suits and Test Plans](#migrate-test-suits-and-test-plans) 
 
 * [Migrating Shared Queries](#migrating-shared-queries)
 
@@ -264,6 +264,12 @@ formatExpression: I have listed the names of the unused fields which will be ref
 
 # Migrate Test Cases
 
+Note: Migrating Test Cases First
+When planning our data migration, we prioritize Test Cases for a good reason:
+
+* Dependency: Test Cases are often linked to Test Plans through Test Suites.
+* By migrating Test Cases first, we ensure that when we later migrate the Test Plans, the associated Test Cases already exist in the destination organization.
+
 1. I started the migration with **Test Cases** along with their attachments to the Target Project, This is its configuration at the Processors in the JSON file: `"WIQLQueryBit": "AND [System.WorkItemType] = 'Test Case'` "
 
 ![TestCaseBeforeMigration](https://github.com/KareemKhamis/Migration-project-between-Azure-DevOps-Cloud/assets/96993017/dc61090e-96ea-4b41-9f2b-57786165a74f)
@@ -288,6 +294,9 @@ Here is how the Target Project Looks like after Migration
 
 
  # Migrate Test Suits and Test Plans  
+
+Note: Creating Test Suites Manually
+After migrating Test Cases and Test Plans, consider creating Test Suites manually. This approach remains valid, especially when specific configurations or settings require manual adjustments. It ensures precision and customization tailored to your project needs.
  
 1. Now Let’s move to the Migrating of Test Suits and Test Plans, Here are the Test plans before migration:
 
